@@ -94,7 +94,8 @@ h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.02
 .ba b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 2px; }
 .ba .after { background: var(--accent-wash); }
 .ba .after b { color: var(--accent); }
-.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 22px; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 6px; }
+.note { font-size: 12px; color: var(--text-muted); margin: 0 0 20px; }
 .stat { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
 .stat .v { font-size: 26px; font-weight: 650; line-height: 1.1; }
 .stat .l { font-size: 13px; color: var(--text-secondary); }
@@ -187,8 +188,9 @@ footer .links { display: flex; gap: 8px; }
         <div class="stats">
           <div class="stat"><div class="v">112</div><div class="l">deals automated</div></div>
           <div class="stat"><div class="v">0</div><div class="l">duplicate orders</div></div>
-          <div class="stat"><div class="v">5</div><div class="l">real bugs caught</div></div>
+          <div class="stat"><div class="v">5</div><div class="l">issues found in live testing</div></div>
         </div>
+        <p class="note">Numbers from the demo run against real Salesforce and ERP instances.</p>
         <div class="cta">
           <a class="btn primary" href="https://janpaulreckling.github.io/order-to-cash-sync/dashboard/">Live dashboard</a>
           <a class="btn" href="https://github.com/janpaulreckling/order-to-cash-sync">How it's built (GitHub)</a>
