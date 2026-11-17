@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jan Paul Reckling · Data & Business Analyst</title>
-<meta name="description" content="I automate the back office of a fictional outdoor retailer, Northwind Outfitters: from won deal to cash in the bank. Data & Business Analyst portfolio.">
-<meta property="og:title" content="Jan Paul Reckling · Data & Business Analyst">
-<meta property="og:description" content="From won deal to cash in the bank: back-office automation and analytics, built against real systems.">
+<title>Jan Paul Reckling · Data & Business Systems Analyst</title>
+<meta name="description" content="Data & Business Systems Analyst in New York. I turn CRM, ERP and payment data into answers about cash, shown on a fictional retailer built against real Salesforce, ERP, Stripe and bank systems.">
+<meta property="og:title" content="Jan Paul Reckling · Data & Business Systems Analyst">
+<meta property="og:description" content="From won deal to cash in the bank: CRM, ERP and payment data turned into answers, built against real systems.">
 <meta property="og:image" content="https://janpaulreckling.github.io/img/og.png">
 <meta property="og:url" content="https://janpaulreckling.github.io/">
 <meta name="twitter:card" content="summary_large_image">
@@ -110,8 +110,17 @@ h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.02
 .match { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
 .pill { border: 1px solid var(--border); background: var(--surface-1); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
 
+/* about */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 32px; margin: 56px 0 0; align-items: start; }
+.about-lead { font-size: 17px; color: var(--text-secondary); margin: 0; }
+.facts { margin: 0; display: grid; gap: 10px; }
+.facts div { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.facts dt { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.facts dd { margin: 2px 0 0; font-size: 14px; color: var(--text-primary); }
+
 /* skills */
-.skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 56px 0; }
+.skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 56px; }
+.roles-title { margin-top: 56px; }
 .skill { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
 .skill h3 { font-size: 15px; margin: 0 0 4px; }
 .skill p { margin: 0; font-size: 14px; color: var(--text-secondary); }
@@ -127,6 +136,7 @@ footer .links { display: flex; gap: 8px; }
   .step:nth-child(3) { border-left: 0; }
   .step:nth-child(n+3) { border-top: 1px solid var(--border); }
   .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }
 @media (max-width: 480px) {
   .hero { padding-top: 28px; }
@@ -147,7 +157,7 @@ footer .links { display: flex; gap: 8px; }
       Jan Paul Reckling
     </a>
     <div class="nav-links">
-      <a class="icon-btn" href="https://www.linkedin.com/in/jan-paul-reckling-9b7b6126b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+      <a class="icon-btn" href="https://www.linkedin.com/in/janpaulreckling/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4z"/></svg>
         <span class="label">LinkedIn</span></a>
       <a class="icon-btn" href="https://github.com/janpaulreckling" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
@@ -158,9 +168,9 @@ footer .links { display: flex; gap: 8px; }
   </nav>
 
   <header class="hero">
-    <span class="eyebrow">Data &amp; Business Analyst</span>
+    <span class="eyebrow">Data &amp; Business Systems Analyst · New York</span>
     <h1>From won deal to cash in the bank.</h1>
-    <p class="lead">I automate the back office of a fictional outdoor retailer, <strong>Northwind Outfitters</strong>. Orders and invoices create themselves, payments get matched, and dashboards show where the money is. Everything runs against <strong>real systems</strong>: Salesforce, an ERP, and payment and bank data.</p>
+    <p class="lead">I turn CRM, ERP and payment data into answers about cash: <strong>who pays late, where orders get stuck, and whether the books tie out.</strong> To show how, I built the back office of a fictional outdoor retailer, Northwind Outfitters, against <strong>real systems</strong>: Salesforce, an ERP, Stripe and bank data.</p>
     <div class="cta">
       <a class="btn primary" href="https://janpaulreckling.github.io/order-to-cash-sync/dashboard/">See the live dashboard
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -186,11 +196,11 @@ footer .links { display: flex; gap: 8px; }
           <div class="after"><b>After</b>Orders and invoices create themselves, and the sales rep sees "Paid" as soon as the money arrives. A live dashboard shows how fast deals turn into cash.</div>
         </div>
         <div class="stats">
-          <div class="stat"><div class="v">137</div><div class="l">deals automated</div></div>
-          <div class="stat"><div class="v">0</div><div class="l">duplicate orders</div></div>
-          <div class="stat"><div class="v">5</div><div class="l">issues found in live testing</div></div>
+          <div class="stat"><div class="v">0</div><div class="l">duplicate orders across 137 synced deals</div></div>
+          <div class="stat"><div class="v">5</div><div class="l">issues found by testing on live systems</div></div>
+          <div class="stat"><div class="v">4 of 12</div><div class="l">customers pay every invoice late</div></div>
         </div>
-        <p class="note">Numbers from the demo run against real Salesforce and ERP instances.</p>
+        <p class="note">Sync numbers are measured in the demo run against real Salesforce and ERP instances. Payment behavior is simulated demo data.</p>
         <div class="cta">
           <a class="btn primary" href="https://janpaulreckling.github.io/order-to-cash-sync/dashboard/">Live dashboard</a>
           <a class="btn" href="https://github.com/janpaulreckling/order-to-cash-sync">How it's built (GitHub)</a>
@@ -228,17 +238,31 @@ footer .links { display: flex; gap: 8px; }
     </article>
   </main>
 
-  <section aria-label="What I bring" class="skills">
-    <div class="skill"><h3>SQL and data modeling</h3><p>Turning raw system data into tables that answer business questions.</p></div>
-    <div class="skill"><h3>Process automation</h3><p>Python that moves data between systems safely, with checks, retries and an audit trail.</p></div>
-    <div class="skill"><h3>CRM and ERP know-how</h3><p>Order-to-cash, invoicing, payment terms, receivables, month-end close.</p></div>
-    <div class="skill"><h3>Dashboards people use</h3><p>One clear question per view, live numbers, and drill-down to the record.</p></div>
+  <section aria-labelledby="about" class="about">
+    <div>
+      <p class="section-title" id="about">About me</p>
+      <p class="about-lead">Before building this, I did the manual version: verifying invoices and reconciling accounts across systems at DHL, analyzing merchant transaction data at a payments company, and choosing and structuring business systems at a startup. These projects automate that work and measure it.</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Education</dt><dd>M.S. Information Systems, Data Analytics (STEM), Baruch College, CUNY · expected May 2027<br>B.A. International Business Management, Hochschule Fresenius</dd></div>
+      <div><dt>Experience</dt><dd>Business Development &amp; Analytics, Flatpay (payments) · Business Systems intern, Gistable · Consulting intern, German American Chamber of Commerce, New York · Accounting &amp; Controlling intern, DHL</dd></div>
+      <div><dt>Location</dt><dd>Brooklyn, New York · available full-time from June 2027</dd></div>
+      <div><dt>Languages</dt><dd>English (fluent), German (native)</dd></div>
+    </dl>
+  </section>
+
+  <p class="section-title roles-title">Where to look, by role</p>
+  <section aria-label="Which part fits which role" class="skills">
+    <div class="skill"><h3>Data Analyst</h3><p>Dashboard and findings: late payers, days sales outstanding, where the time between deal and cash goes.</p></div>
+    <div class="skill"><h3>Business Analyst</h3><p>The business rules: who wins after an order is confirmed, amounts must match, no silent currency conversion.</p></div>
+    <div class="skill"><h3>Business Systems Analyst</h3><p>Salesforce to ERP sync with retries, a review queue for problem records and a CRM vs. ERP reconciliation.</p></div>
+    <div class="skill"><h3>Analytics Engineer</h3><p>SQL models in staging and marts layers, dbt with tests, and checks that tie out to the cent.</p></div>
   </section>
 
   <footer>
     <span>Northwind Outfitters is fictional. The systems are real demo instances and the code is open source.</span>
     <span class="links">
-      <a class="icon-btn" href="https://www.linkedin.com/in/jan-paul-reckling-9b7b6126b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/janpaulreckling/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a class="icon-btn" href="https://github.com/janpaulreckling" target="_blank" rel="noopener noreferrer">GitHub</a>
     </span>
   </footer>
