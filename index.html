@@ -204,21 +204,27 @@ footer .links { display: flex; gap: 8px; }
 
     <article class="project" aria-labelledby="p2">
       <div>
-        <span class="tag soon"><span class="dot"></span>Coming December 2026</span>
+        <span class="tag"><span class="dot"></span>Live</span>
         <h2 id="p2">From payment to closed books</h2>
         <div class="ba">
           <div><b>Before</b>At month end, Accounting matches card payouts and bank deposits to invoices by hand in spreadsheets, line by line.</div>
           <div class="after"><b>After</b>Payments are matched to invoices automatically. Only the real exceptions go to a person, with the evidence attached.</div>
         </div>
-        <div class="chips"><span class="chip">Stripe (test mode)</span><span class="chip">Bank data (Plaid sandbox)</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Matching</span></div>
-      </div>
-      <div class="soon-visual visual" aria-hidden="true">
-        <div>
-          <div class="big">Payment → Invoice</div>
-          <div>Reads the invoices from Project 1 and matches them to real test payments.</div>
-          <div class="match"><span class="pill">Card payout</span><span>+</span><span class="pill">Bank deposit</span><span>→</span><span class="pill">Invoice</span></div>
+        <div class="stats">
+          <div class="stat"><div class="v">58</div><div class="l">payments reconciled</div></div>
+          <div class="stat"><div class="v">79%</div><div class="l">matched automatically</div></div>
+          <div class="stat"><div class="v">0</div><div class="l">wrong automatic matches</div></div>
         </div>
+        <p class="note">November 2026 close, run against the invoices from project 1, Stripe test mode and Plaid Sandbox.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://northwind-cash-recon.streamlit.app">Live demo</a>
+          <a class="btn" href="https://github.com/janpaulreckling/cash-reconciliation-engine">How it's built (GitHub)</a>
+        </div>
+        <div class="chips"><span class="chip">Stripe (test mode)</span><span class="chip">Bank data (Plaid sandbox)</span><span class="chip">SQL</span><span class="chip">dbt</span><span class="chip">Python</span><span class="chip">Streamlit</span></div>
       </div>
+      <a class="shot visual" href="https://northwind-cash-recon.streamlit.app" aria-label="Open the live reconciliation review app">
+        <img src="img/recon-review-queue.png" width="1280" height="889" alt="Reconciliation review app: close status and the queue of payments that need a person" loading="lazy">
+      </a>
     </article>
   </main>
 
