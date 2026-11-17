@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jan Paul Reckling · Data & Business Analyst</title>
+<meta name="description" content="I automate the back office of a fictional outdoor retailer, Northwind Outfitters: from won deal to cash in the bank. Data & Business Analyst portfolio.">
+<meta property="og:title" content="Jan Paul Reckling · Data & Business Analyst">
+<meta property="og:description" content="From won deal to cash in the bank: back-office automation and analytics, built against real systems.">
+<meta property="og:image" content="https://janpaulreckling.github.io/img/og.png">
+<meta property="og:url" content="https://janpaulreckling.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232a78d6'/%3E%3Cpath d='M4 18l5-9 3.5 6 2.5-4 4 7z' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface-1: #fcfcfb; --surface-2: #f3f2ee;
+  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #898781;
+  --border: rgba(11,11,11,0.10); --accent: #2a78d6; --accent-ink: #ffffff; --accent-wash: rgba(42,120,214,0.10);
+  --good-ink: #006300; --late: #e34948; --ring: #2a78d6;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232321;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #898781;
+    --border: rgba(255,255,255,0.10); --accent: #3987e5; --accent-ink: #ffffff; --accent-wash: rgba(57,135,229,0.16);
+    --good-ink: #0ca30c; --late: #e66767; --ring: #3987e5;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface-1: #1a1a19; --surface-2: #232321;
+  --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #898781;
+  --border: rgba(255,255,255,0.10); --accent: #3987e5; --accent-ink: #ffffff; --accent-wash: rgba(57,135,229,0.16);
+  --good-ink: #0ca30c; --late: #e66767; --ring: #3987e5;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--page); color: var(--text-primary); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* nav */
+nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 650; text-decoration: none; }
+.logo { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; flex: none; }
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.icon-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); background: var(--surface-1);
+  border-radius: 8px; padding: 6px 10px; font-size: 14px; color: var(--text-secondary); text-decoration: none; cursor: pointer; }
+.icon-btn:hover { color: var(--text-primary); background: var(--surface-2); }
+.icon-btn svg { flex: none; }
+
+/* hero */
+.hero { padding: 48px 0 40px; }
+.eyebrow { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--accent-wash);
+  padding: 4px 10px; border-radius: 999px; margin-bottom: 16px; }
+h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 16px; font-weight: 700; }
+.lead { font-size: clamp(18px, 2.4vw, 22px); color: var(--text-secondary); max-width: 720px; margin: 0 0 28px; }
+.lead strong { color: var(--text-primary); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 15px;
+  text-decoration: none; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); }
+.btn:hover { background: var(--surface-2); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.btn.primary:hover { filter: brightness(1.07); }
+
+/* story strip */
+.section-title { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 14px; }
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden; margin-bottom: 56px; }
+.step { padding: 18px 18px 20px; position: relative; }
+.step + .step { border-left: 1px solid var(--border); }
+.step .num { font-size: 12px; font-weight: 700; color: var(--accent); }
+.step h3 { font-size: 16px; margin: 4px 0 4px; }
+.step p { margin: 0; font-size: 14px; color: var(--text-secondary); }
+.step .owner { margin-top: 10px; font-size: 12px; color: var(--text-muted); }
+
+/* project cards */
+.project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 32px; align-items: center;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: 18px; padding: 28px; margin-bottom: 24px; box-shadow: var(--shadow); }
+.project h2 { font-size: clamp(24px, 3.2vw, 32px); line-height: 1.15; letter-spacing: -0.01em; margin: 6px 0 14px; }
+.tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--text-secondary); }
+.tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good-ink); }
+.tag.soon .dot { background: var(--text-muted); }
+.ba { display: grid; gap: 10px; margin: 0 0 20px; }
+.ba div { padding: 12px 14px; border-radius: 10px; background: var(--surface-2); font-size: 15px; }
+.ba b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 2px; }
+.ba .after { background: var(--accent-wash); }
+.ba .after b { color: var(--accent); }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 22px; }
+.stat { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.stat .v { font-size: 26px; font-weight: 650; line-height: 1.1; }
+.stat .l { font-size: 13px; color: var(--text-secondary); }
+.shot { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); background: var(--surface-2); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot:hover img { transform: scale(1.01); transition: transform 200ms ease; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.chip { font-size: 12px; color: var(--text-secondary); background: var(--surface-2); border-radius: 6px; padding: 3px 8px; }
+.soon-visual { aspect-ratio: 16 / 10; border-radius: 12px; border: 1px dashed var(--border); background: var(--surface-2);
+  display: grid; place-items: center; text-align: center; padding: 24px; color: var(--text-secondary); }
+.soon-visual .big { font-size: 22px; font-weight: 650; color: var(--text-primary); margin-bottom: 6px; }
+.match { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+.pill { border: 1px solid var(--border); background: var(--surface-1); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 56px 0; }
+.skill { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+.skill h3 { font-size: 15px; margin: 0 0 4px; }
+.skill p { margin: 0; font-size: 14px; color: var(--text-secondary); }
+
+footer { border-top: 1px solid var(--border); padding: 24px 0 40px; color: var(--text-muted); font-size: 13px;
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+footer .links { display: flex; gap: 8px; }
+
+@media (max-width: 860px) {
+  .project { grid-template-columns: minmax(0, 1fr); padding: 20px; gap: 22px; }
+  .project .visual { order: -1; }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .step:nth-child(3) { border-left: 0; }
+  .step:nth-child(n+3) { border-top: 1px solid var(--border); }
+  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .hero { padding-top: 28px; }
+  .flow { grid-template-columns: minmax(0, 1fr); }
+  .step + .step { border-left: 0; border-top: 1px solid var(--border); }
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .stat { padding: 8px; } .stat .v { font-size: 21px; } .stat .l { font-size: 12px; }
+  .skills { grid-template-columns: minmax(0, 1fr); }
+  .nav-links .label { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="#top" id="top">
+      <span class="logo" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-12 4 7 3-5 5 10z"/></svg></span>
+      Jan Paul Reckling
+    </a>
+    <div class="nav-links">
+      <a class="icon-btn" href="https://www.linkedin.com/in/jan-paul-reckling-9b7b6126b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4z"/></svg>
+        <span class="label">LinkedIn</span></a>
+      <a class="icon-btn" href="https://github.com/janpaulreckling" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+        <span class="label">GitHub</span></a>
+      <button class="icon-btn" id="theme" type="button" aria-label="Color theme"></button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Data &amp; Business Analyst</span>
+    <h1>From won deal to cash in the bank.</h1>
+    <p class="lead">I automate the back office of a fictional outdoor retailer, <strong>Northwind Outfitters</strong>. Orders and invoices create themselves, payments get matched, and dashboards show where the money is. Everything runs against <strong>real systems</strong>: Salesforce, an ERP, and payment and bank data.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://janpaulreckling.github.io/order-to-cash-sync/dashboard/">See the live dashboard
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="btn" href="#projects">The projects</a>
+    </div>
+  </header>
+
+  <p class="section-title">How the money moves at Northwind</p>
+  <div class="flow" role="list">
+    <div class="step" role="listitem"><div class="num">1</div><h3>A deal is won</h3><p>A sales rep closes the deal in Salesforce.</p><div class="owner">Project 1</div></div>
+    <div class="step" role="listitem"><div class="num">2</div><h3>Order and invoice</h3><p>They appear in the accounting system on their own.</p><div class="owner">Project 1</div></div>
+    <div class="step" role="listitem"><div class="num">3</div><h3>The customer pays</h3><p>Card payments and bank transfers arrive.</p><div class="owner">Project 2</div></div>
+    <div class="step" role="listitem"><div class="num">4</div><h3>Books are closed</h3><p>Every payment is matched to its invoice.</p><div class="owner">Project 2</div></div>
+  </div>
+
+  <main id="projects">
+    <article class="project" aria-labelledby="p1">
+      <div>
+        <span class="tag"><span class="dot"></span>Live</span>
+        <h2 id="p1">From won deal to paid invoice, automatically</h2>
+        <div class="ba">
+          <div><b>Before</b>Someone retypes every won deal into the accounting system. Typos become wrong invoices, and Sales keeps asking Finance whether the customer has paid.</div>
+          <div class="after"><b>After</b>Orders and invoices create themselves, and the sales rep sees "Paid" as soon as the money arrives. A live dashboard shows how fast deals turn into cash.</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v">112</div><div class="l">deals automated</div></div>
+          <div class="stat"><div class="v">0</div><div class="l">duplicate orders</div></div>
+          <div class="stat"><div class="v">5</div><div class="l">real bugs caught</div></div>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="https://janpaulreckling.github.io/order-to-cash-sync/dashboard/">Live dashboard</a>
+          <a class="btn" href="https://github.com/janpaulreckling/order-to-cash-sync">How it's built (GitHub)</a>
+        </div>
+        <div class="chips"><span class="chip">Salesforce</span><span class="chip">Odoo ERP</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">DuckDB</span><span class="chip">Dashboard</span></div>
+      </div>
+      <a class="shot visual" href="https://janpaulreckling.github.io/order-to-cash-sync/dashboard/" aria-label="Open the live order-to-cash dashboard">
+        <img src="img/o2c-dashboard.png" width="1280" height="1140" alt="Order-to-cash dashboard: bookings, cash collected, open receivables, days sales outstanding, and a chart of bookings, billings and collections by week" loading="lazy">
+      </a>
+    </article>
+
+    <article class="project" aria-labelledby="p2">
+      <div>
+        <span class="tag soon"><span class="dot"></span>Coming December 2026</span>
+        <h2 id="p2">From payment to closed books</h2>
+        <div class="ba">
+          <div><b>Before</b>At month end, Accounting matches card payouts and bank deposits to invoices by hand in spreadsheets, line by line.</div>
+          <div class="after"><b>After</b>Payments are matched to invoices automatically. Only the real exceptions go to a person, with the evidence attached.</div>
+        </div>
+        <div class="chips"><span class="chip">Stripe (test mode)</span><span class="chip">Bank data (Plaid sandbox)</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Matching</span></div>
+      </div>
+      <div class="soon-visual visual" aria-hidden="true">
+        <div>
+          <div class="big">Payment → Invoice</div>
+          <div>Reads the invoices from Project 1 and matches them to real test payments.</div>
+          <div class="match"><span class="pill">Card payout</span><span>+</span><span class="pill">Bank deposit</span><span>→</span><span class="pill">Invoice</span></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <section aria-label="What I bring" class="skills">
+    <div class="skill"><h3>SQL and data modeling</h3><p>Turning raw system data into tables that answer business questions.</p></div>
+    <div class="skill"><h3>Process automation</h3><p>Python that moves data between systems safely, with checks, retries and an audit trail.</p></div>
+    <div class="skill"><h3>CRM and ERP know-how</h3><p>Order-to-cash, invoicing, payment terms, receivables, month-end close.</p></div>
+    <div class="skill"><h3>Dashboards people use</h3><p>One clear question per view, live numbers, and drill-down to the record.</p></div>
+  </section>
+
+  <footer>
+    <span>Northwind Outfitters is fictional. The systems are real demo instances and the code is open source.</span>
+    <span class="links">
+      <a class="icon-btn" href="https://www.linkedin.com/in/jan-paul-reckling-9b7b6126b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="icon-btn" href="https://github.com/janpaulreckling" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </span>
+  </footer>
+</div>
+<script>
+const THEMES = ["auto", "light", "dark"];
+let theme = "auto";
+try { const s = localStorage.getItem("jpr-theme"); if (THEMES.includes(s)) theme = s; } catch (e) { /* storage unavailable */ }
+const ICON = {
+  auto: '<path d="M8 2a6 6 0 1 1 0 12zM8 2a6 6 0 1 0 0 12"/>',
+  light: '<path d="M8 5a3 3 0 1 1 0 6a3 3 0 0 1 0-6zM8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3 3l1 1M12 12l1 1M3 13l1-1M12 4l1-1"/>',
+  dark: '<path d="M13 9.5A5.5 5.5 0 0 1 6.5 3a5.5 5.5 0 1 0 6.5 6.5z"/>',
+};
+function apply(t) {
+  if (t === "auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", t);
+  const b = document.getElementById("theme");
+  b.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[t]}</svg>`;
+  b.setAttribute("aria-label", `Color theme: ${t}. Click to change.`);
+}
+apply(theme);
+document.getElementById("theme").addEventListener("click", () => {
+  theme = THEMES[(THEMES.indexOf(theme) + 1) % THEMES.length];
+  try { localStorage.setItem("jpr-theme", theme); } catch (e) { /* storage unavailable */ }
+  apply(theme);
+});
+</script>
+</body>
+</html>
